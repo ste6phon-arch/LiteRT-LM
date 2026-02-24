@@ -216,7 +216,7 @@ absl::StatusOr<DataProcessorConfig> CreateDataProcessorConfigFromLlmModelType(
   switch (model_type.model_type_case()) {
     case proto::LlmModelType::kGemma3:
     case proto::LlmModelType::kGemma3N:
-      return CreateGemma3DataProcessorConfig(model_type);
+    case proto::LlmModelType::kGemma4:
     case proto::LlmModelType::kQwen3:
     case proto::LlmModelType::kQwen2P5:
       return CreateQwen3DataProcessorConfig(model_type);
